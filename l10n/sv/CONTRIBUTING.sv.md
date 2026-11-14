@@ -7,7 +7,7 @@ SPDX-License-Identifier: CC0-1.0
 # Riktlinjer för bidrag
 
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?style=for-the-badge&logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
-[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa.svg?style=for-the-badge)](CODE_OF_CONDUCT.md)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-2.1-4baaaa.svg?style=for-the-badge)](CODE_OF_CONDUCT.sv.md)
 [![DCO - developer certificate of origin](https://img.shields.io/badge/DCO-Developer%20Certificate%20of%20Origin-lightyellow?style=for-the-badge)](https://developercertificate.org/)
 
 Välkommen! Vi är glada över att du vill bidra till vårt projekt.
@@ -27,7 +27,7 @@ Som ny bidragsgivare är du i en utmärkt position att ge värdefull feedback. D
 
 Var trevlig och respektfull mot varandra.
 
-Vi följer [Contributor Covenants uppförandekod](CODE_OF_CONDUCT.md).
+Vi följer [Contributor Covenants uppförandekod](CODE_OF_CONDUCT.sv.md).
 
 ## Skapa ett ärende
 
@@ -113,11 +113,11 @@ git commit --signoff --gpg-sign -m "fix: lägg till fix för buggen"
 
 ## Rapportera säkerhetsproblem
 
-För säkerhetssårbarheter, följ riktlinjerna i vår [säkerhetsinformation](SECURITY.md).
+För säkerhetssårbarheter, följ riktlinjerna i vår [säkerhetsinformation](SECURITY.sv.md).
 
 ## Utvecklingsriktlinjer
 
-För utvecklingsvägledning, se [DEVELOPMENT Guide](DEVELOPMENT.md).
+För utvecklingsvägledning, se [DEVELOPMENT Guide](../../DEVELOPMENT.md).
 
 ## Skrivstil och översättningar
 

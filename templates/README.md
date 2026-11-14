@@ -16,7 +16,7 @@ Examples: All pointing to this project
 
 Highly optional. Embed an image of the project logo and include links to relevant badges in the README.
 
-**Description**:  Put a meaningful, short, plain-language description of what the project is trying to accomplish and why it matters.
+**Description**: Put a meaningful, short, plain-language description of what the project is trying to accomplish and why it matters.
 Describe the problem(s) this project solves.
 
 **Screenshot**: If the software has visual components, place a screenshot after the description; e.g.,

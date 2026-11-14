@@ -21,7 +21,7 @@ Använd checklistan som diskussionsunderlag för teamet och som grund för konti
 ## Dokumentation
 
 - Måste säkerställa att projektet inkluderar standardfiler för Community Health (CHANGELOG, CONTRIBUTING, CODE_OF_CONDUCT, etc.).  
-  Se [README.md Template Files-avsnittet för en komplett lista](../README.md).
+  Se [README.md Template Files-avsnittet för en komplett lista](../../README.md).
 
 - Bör inkludera användningsdokumentation och arkitekturbeskrivningar relevanta för projektet.
 
@@ -122,7 +122,7 @@ Säkra programvarurutiner och verktyg från OpenSSF och OWASP:
 
 ## Arbetsflöden
 
-- Kan diskutera ditt GitHub-arbetsflöde - en kort sammanfattning och förslag finns i [CONTRIBUTING - Pull Request Lifecycle](CONTRIBUTING.md)
+- Kan diskutera ditt GitHub-arbetsflöde - en kort sammanfattning och förslag finns i [CONTRIBUTING - Pull Request Lifecycle](CONTRIBUTING.sv.md)
 
 ## Spefikationer och standarder att följa
 

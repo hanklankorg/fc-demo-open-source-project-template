@@ -332,7 +332,7 @@ mise install --force
 
 ### Local Output
 
-![Quality Check Output - Local Example](assets/quality_output_example.png)
+![Quality Check Output - Local Example](assets/quality_script_output_example.png)
 
 ## Additional Resources
 
