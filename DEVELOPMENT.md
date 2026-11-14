@@ -184,6 +184,8 @@ apt install reuse  # Debian/Ubuntu
 | `justfile` | Command runner definitions |
 | `.mise.toml` | Tool versions (single source of truth) |
 | `.rumdl.toml` | Markdown linting rules |
+| `nanolinter.toml` | Lint checks of the pull request gate in CI |
+| `.forge-ci/artifacts.yml` | What the release and snapshot workflows build and publish |
 | `.gommitlint.yaml` | Commit message validation rules |
 | `publiccode.yml` | Public code metadata |
 | `REUSE.toml` | License compliance configuration |

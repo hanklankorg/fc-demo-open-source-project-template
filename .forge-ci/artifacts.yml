@@ -1,0 +1,168 @@
+# SPDX-FileCopyrightText: 2025 The Open Source Project Template Authors
+#
+# SPDX-License-Identifier: CC0-1.0
+# Artifacts Configuration
+#
+# This file defines what to build, publish, and containerize, for releases
+# and development snapshots alike.
+# Customize this for your project type when using this template.
+#
+# Documentation: https://github.com/diggsweden/forge-ci/blob/main/docs/artifacts-reference.md
+#
+# Each example below is a complete file: use one in place of the active
+# declaration at the end. The workflows in .github/workflows/ need the
+# matching project-type, lint image and runtime images; their comments say
+# where.
+# EXAMPLE 1: Maven Application with Container
+# Uncomment and customize for Java/Spring Boot projects
+#
+# # The image is signed keyless with Sigstore and carries SBOM and SLSA
+# # provenance attestations; the release files get OpenPGP .asc signatures.
+# sign:
+#   method: sigstore
+#   files-method: gpg
+# git-signing:
+#   method: gpg
+# artifacts:
+#   - name: my-app
+#     project-type: maven
+#     working-directory: .
+#     # Leave build-type out for an application whose JAR also goes to
+#     # GitHub Packages: an explicit `application` takes it out of the
+#     # forge-packages publication.
+#     publish-to:
+#       - forge-packages
+#     config:
+#       java-version: 25
+#
+# containers:
+#   - name: my-app
+#     from: [my-app]
+#     container-file: Containerfile
+#     context: .
+#     platforms: linux/amd64,linux/arm64
+# EXAMPLE 2: NPM Application with Container
+# Uncomment and customize for Node.js/TypeScript projects
+#
+# sign:
+#   method: sigstore
+#   files-method: gpg
+# git-signing:
+#   method: gpg
+# artifacts:
+#   - name: my-app
+#     project-type: npm
+#     working-directory: .
+#     # GitHub Packages takes the package only as @<owner>/<name>.
+#     publish-to:
+#       - forge-packages
+#     config:
+#       node-version: 24
+#       # Required with forge-packages: each version gets a tag of its own.
+#       npm-tag: release-{version}
+#
+# containers:
+#   - name: my-app
+#     from: [my-app]
+#     container-file: Containerfile
+#     context: .
+#     platforms: linux/amd64,linux/arm64
+# EXAMPLE 3: Maven Library (for publishing to Maven Central)
+# Uncomment and customize for shared libraries
+#
+# sign:
+#   method: gpg
+# git-signing:
+#   method: gpg
+# artifacts:
+#   - name: my-library
+#     project-type: maven
+#     working-directory: .
+#     build-type: library
+#     require-authorization: true
+#     publish-to:
+#       - forge-packages
+#       - maven-central
+#     config:
+#       java-version: 25
+#
+# Required secrets for Maven Central:
+#   MAVEN_CENTRAL_USERNAME
+#   MAVEN_CENTRAL_PASSWORD
+#   RELEASE_GPG_PRIVATE_KEY
+#   RELEASE_GPG_PASSPHRASE
+#   RELEASE_GPG_PUBLIC_KEY
+# EXAMPLE 4: Gradle Android Application
+# Uncomment and customize for Android apps
+#
+# sign:
+#   method: gpg
+# git-signing:
+#   method: gpg
+# artifacts:
+#   - name: my-android-app
+#     project-type: gradle-android
+#     working-directory: .
+#     sboms: build
+#     config:
+#       build-module: app
+#       build-types: release
+#       gradle-version-file: gradle.properties
+#       enable-android-signing: true
+#
+# Required secrets for Android signing:
+#   ANDROID_KEYSTORE
+#   ANDROID_KEYSTORE_PASSWORD
+#   ANDROID_KEY_ALIAS
+#   ANDROID_KEY_PASSWORD
+# EXAMPLE 5: Monorepo with Multiple Artifacts
+# Uncomment and customize for projects with multiple components
+#
+# sign:
+#   method: sigstore
+#   files-method: gpg
+# git-signing:
+#   method: gpg
+# artifacts:
+#   - name: backend
+#     project-type: maven
+#     working-directory: backend
+#     build-type: application
+#     config:
+#       java-version: 25
+#
+#   - name: frontend
+#     project-type: npm
+#     working-directory: frontend
+#     config:
+#       node-version: 24
+#
+# containers:
+#   # Every image goes to one repository, so each one has a tag suffix.
+#   - name: backend
+#     from: [backend]
+#     container-file: backend/Containerfile
+#     context: backend
+#     platforms: linux/amd64,linux/arm64
+#     tag-suffix: -backend
+#
+#   - name: frontend
+#     from: [frontend]
+#     container-file: frontend/Containerfile
+#     context: frontend
+#     platforms: linux/amd64,linux/arm64
+#     tag-suffix: -frontend
+# For template repositories without buildable artifacts: the 'meta' type
+# builds, bumps and scans nothing, and the release is a changelog and a
+# signed tag.
+artifacts:
+  - name: open-source-project-template
+    project-type: meta
+    working-directory: .
+containers: []
+# The release files (checksums) and the release commit and tag are signed
+# with the GPG key in RELEASE_GPG_PRIVATE_KEY.
+sign:
+  method: gpg
+git-signing:
+  method: gpg

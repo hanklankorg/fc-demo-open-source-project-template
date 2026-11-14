@@ -41,6 +41,7 @@ Based on well-established open source guidelines and practices. Suitable for any
 - `templates/README.md` - Example README structure for your project
 - `.github/ISSUE_TEMPLATE/` - GitHub issue templates to copy
 - `.github/workflows/` - GitHub Actions workflows (customize for your needs)
+- `.forge-ci/artifacts.yml`, `nanolinter.toml` - What the workflows build, publish and lint (copy them with the workflows)
 
 ## Using the Template
 
@@ -70,7 +71,7 @@ Based on well-established open source guidelines and practices. Suitable for any
 - **CODEOWNERS** - Maintainers list ([GitHub docs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners))
 - **ISSUE_TEMPLATE/** - Bug report, feature request templates
 - **pull_request_template.md** - PR template (replace `INSERT_CONTRIBUTING_LINK`)
-- **workflows/** - CI/CD workflows (customize for your needs)
+- **workflows/** - CI/CD workflows that call [Forge CI](https://github.com/diggsweden/forge-ci/blob/main/docs/github.md) (customize for your needs)
 
 **Additional Resources**
 

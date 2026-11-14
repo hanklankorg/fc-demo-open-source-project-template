@@ -30,6 +30,12 @@ disable = [
   "MD036"   # emphasis-heading - valid use of emphasis
 ]
 
+# The files under templates/ are copied to the root of a new project, and
+# their relative links (LICENSE, DEVELOPMENT.md) point at files that exist
+# there, not here.
+[per-file-ignores]
+"templates/**" = ["MD057"]
+
 [MD003]
 style = "atx"
 

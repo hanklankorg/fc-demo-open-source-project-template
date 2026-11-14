@@ -1,0 +1,63 @@
+# SPDX-FileCopyrightText: 2025 The Open Source Project Template Authors
+#
+# SPDX-License-Identifier: CC0-1.0
+
+# The lint plan of the pull request gate: Forge CI runs `nanolinter verify`
+# against it. The checks are the ones `just lint-all` runs, with the SAST
+# and dependency scans the pull request gate ran before.
+# `nanolinter explain --all` lists more checks, among them the ones of each
+# language: add yours when you use this template.
+
+[detect]
+auto = true
+
+[verify]
+checks = [
+  "version-control",
+  "commits",
+  "secrets",
+  "sast",
+  "osv",
+  "yaml",
+  "markdown",
+  "shell",
+  "shell-format",
+  "actions",
+  "license",
+  "xml",
+  "container",
+]
+
+[policy]
+block = [
+  "version-control",
+  "commits",
+  "secrets",
+  "sast",
+  "osv",
+  "yaml",
+  "markdown",
+  "shell",
+  "shell-format",
+  "actions",
+  "license",
+  "xml",
+  "container",
+]
+
+# Markdown as `just lint-markdown` runs it: without the line length rule.
+#
+# MD076 (list item spacing) is left out as well. The checklists separate
+# their Must, Should and May groups with a blank line inside one list, and
+# the numbered guides leave one between their steps; both are written that
+# way on purpose.
+[linters.markdown.settings]
+"rumdl.disable_rules" = ["MD013", "MD076"]
+
+# renovate.json sets no minimum release age for updates. That is a choice
+# about how Renovate proposes updates, not a defect in the code, so the rule
+# is left out here for the maintainers to decide.
+[linters.sast.settings]
+"opengrep.exclude_rules" = [
+  "package_managers.renovate.renovate-missing-minimum-release-age.renovate-missing-minimum-release-age",
+]
