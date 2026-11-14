@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2025 The Open Source Project Template Authors
 #
 # SPDX-License-Identifier: CC0-1.0
-name: Release Dev Workflow
+name: Release Snapshot Workflow
 # A development snapshot of a branch: Forge CI's snapshot orchestrator builds
 # what .forge-ci/artifacts.yml declares and publishes it without a release, a
 # tag or a change to the branch: container images under a tag ending in
@@ -17,7 +17,7 @@ concurrency:
   group: snapshot-${{ github.ref_name }}
   cancel-in-progress: false
 jobs:
-  dev-release:
+  snapshot-release:
     uses: diggsweden/forge-ci/.github/workflows/release-snapshot-orchestrator.yml@PIN_FORGE_CI_SHA # v0.90.0
     permissions:
       actions: read
